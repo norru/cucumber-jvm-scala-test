@@ -1,13 +1,11 @@
 package net.itadinanta.cucumber
 
-import cucumber.api.Scenario
-import cucumber.api.scala.{ ScalaDsl, EN }
-import org.scalatest.Assertions._
-import cucumber.api.PendingException
+import org.scalatest.Assertions.expectResult
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.test.context.TestContextManager
-import org.springframework.context.ApplicationContextAware
-import org.springframework.context.ApplicationContext
+
+import cucumber.api.scala.EN
+import cucumber.api.scala.ScalaDsl
+import cucumber.runtime.scala.Transform.t2String
 
 class SayHelloStepDefinitions extends ScalaDsl with EN with ContextInjection {
 	@Autowired
@@ -17,8 +15,8 @@ class SayHelloStepDefinitions extends ScalaDsl with EN with ContextInjection {
 	When("""^I say (.+)$""") { encountered: String =>
 		sayHello = factory.createSayHello(encountered)
 	}
-	
-	When("""^she says (.+)$"""){ greeting: String =>
+
+	When("""^she says (.+)$""") { greeting: String =>
 		sayHello.greeting = greeting
 	}
 

@@ -16,12 +16,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.scala-lang</groupId>
-			<artifactId>scala-library</artifactId>
-			<version>${scala.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>${cucumber-jvm.version}</version>
@@ -79,6 +73,12 @@
 			<groupId>org.springframework.scala</groupId>
 			<artifactId>spring-scala</artifactId>
 			<version>1.0.0.M1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>scala-library</artifactId>
+					<groupId>org.scala-lang</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 	<build>
