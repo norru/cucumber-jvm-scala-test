@@ -17,6 +17,10 @@ class SayHelloStepDefinitions extends ScalaDsl with EN with ContextInjection {
 	When("""^I say (.+)$""") { encountered: String =>
 		sayHello = factory.createSayHello(encountered)
 	}
+	
+	When("""^she says (.+)$"""){ greeting: String =>
+		sayHello.greeting = greeting
+	}
 
 	Then("""^you reply '(.+)'$""") { expected: String =>
 		expectResult(expected) { sayHello.reply() }

@@ -5,6 +5,7 @@ class SayHelloFactory {
 }
 
 class SayHello(val encountered: String) {
-	def reply() = "Hello, " + encountered + "!"
+	var greeting = "Hello"
+	def reply() = greeting + ", " + encountered + "!"
 }
 
