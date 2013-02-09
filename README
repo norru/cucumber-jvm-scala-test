@@ -1,0 +1,7 @@
+Proof of concept of the following things working together:
+
+- cucumber-jvm
+- cucumber-scala
+- spring
+- scala-spring
+
