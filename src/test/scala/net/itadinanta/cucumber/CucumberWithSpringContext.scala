@@ -7,6 +7,7 @@ import scala.collection.mutable.ArrayBuffer
 
 object ContextInjectionRegistry {
 	val registered = new ArrayBuffer[ContextInjection]
+	def getRegistered = registered.toArray
 	def register(autowired: ContextInjection) { registered += autowired }
 	def apply(block: AnyRef => Unit) = { registered.foreach(block) }
 }
