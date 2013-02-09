@@ -5,3 +5,17 @@ Proof of concept of the following things working together:
 - spring
 - scala-spring
 
+Gotchas:
+
+- add this repository to spring.xml (for scala-spring)
+
+		<repositories>
+	   		<repository>
+				<id>milestone.repo.springsource.org</id>
+				<name>repo.springsource.org-milestone</name>
+				<url>https://repo.springsource.org/libs-milestone</url>
+			</repository>
+		</repositories>
+
+To run:
+- mvn package && ./run_tests.sh
